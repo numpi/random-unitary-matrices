@@ -85,15 +85,6 @@ function e = sample_eigs(n, complexoutput, detsign, witheiscor)
   norms = sqrt(sum(abs(u).^2,1));
   u(1,:) = u(1,:) - d(1:n-1) .* norms;
 
-  % D = diag(d);
-  % for j = n-1:-1:1
-  %   U = eye(2) - 2/(norm(u(:,j))^2) * u(:,j) * u(:,j)';
-  %   D(j:j+1,:) = U * D(j:j+1,:);
-  % end
-  % e = eig(D);
-
-  % return
-
   % Refactor core transformations.
   Q = zeros(3,n-1);
   d2 = 1;
